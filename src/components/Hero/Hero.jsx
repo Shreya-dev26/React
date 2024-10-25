@@ -1,12 +1,23 @@
 import React from "react";
 import MountainPng from "../../assets/moon-surface-hd.png";
-
+import HeroCard from "../HeroCard/HeroCard"; // Import HeroCard
+import Rapidscat from "../Rapidscat/Rapidscat"; // Import Rapidscat
+import Satelite from "../Satelite/Satelite"; // Import Satelite
+import BgVideo from "../../assets/earth-bg.mp4";
 const Hero = () => {
   return (
     <div className=" bg-black/20 h-full">
       <div className="h-full flex justify-center items-center p-4">
         <div className="container grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="text-white space-y-4 lg:pr-36">
+          <video
+            autoPlay
+            loop
+            muted
+            className="fixed right-0 top-0 h-[700px] w-full object-cover z-[-1]"
+          >
+            <source src={BgVideo} type="video/mp4" />
+          </video>
             <h1 data-aos="fade-up" className="text-5xl font-bold">
               ORBIT THE EARTH
             </h1>
@@ -34,6 +45,9 @@ const Hero = () => {
       />
 
       <div className="absolute bottom-0 z-30 right-0 w-full bg-gradient-to-b from-transparent from-10% to-primary to-90% h-[20px] sm:h-[50px] md:[60px]"></div>
+      <HeroCard />
+      <Rapidscat />
+      <Satelite />
     </div>
   );
 };

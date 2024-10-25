@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -11,27 +12,33 @@ const Navbar = () => {
         <div className="container">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4 text-white font-bold text-2xl">
-              <img src={Logo} alt="" className="w-10" />
+              <img src={Logo} alt="Logo" className="w-10" />
               <span>TCJ-SPACE</span>
             </div>
             <div className="text-white hidden sm:block">
               <ul className="flex items-center gap-6 text-xl py-4 ">
                 <li>
-                  <a href="#">About</a>
+                  <Link to="/About">About</Link> {/* Update to Link component */}
                 </li>
                 <li>
-                  <a href="#">Technology</a>
+                  <Link to="/Tech">Technology</Link> {/* Update to Link component */}
                 </li>
                 <li>
-                  <a href="#">Galaxy</a>
+                <a 
+                    href="http://localhost:5174/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Solar System
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Satelite</a>
+                  <Link to="/D3">Infographics</Link> {/* Update to Link component */}
                 </li>
               </ul>
             </div>
             <div>
-              <button className=" text-white border-2 border-white px-3 py-1 rounded-md">
+              <button className="text-white border-2 border-white px-3 py-1 rounded-md">
                 Login
               </button>
             </div>
